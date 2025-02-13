@@ -2,7 +2,7 @@
 
 // Variables
 $color-base: #5dc584;
-$secondary-color: lightgrey;
+$color-fondo: lightgrey;
 $font-family: "Montserrat", serif;
 
 // Mixins
@@ -33,7 +33,7 @@ $font-family: "Montserrat", serif;
 
 body {
     font-family: $font-family;
-    background-color: $secondary-color;
+    background-color: $color-fondo;
 }
 
 // Títulos
@@ -47,11 +47,7 @@ body {
 
 .enlaces {
     @include flex-column;
-
-    &:hover {
-        background-color: gray;
-        opacity: 0.7;
-    }
+  
 }
 
 .presentacion {
@@ -105,10 +101,14 @@ footer {
     a {
         color: black;
         text-decoration: none;
+        transition: width 0.5s ease, background-color 1s ease;
+    }
+
+    a:hover {
+        text-decoration: solid;
+        color: blue;
     }
 }
-
-
 
 .link-arriba {
     text-decoration: none;

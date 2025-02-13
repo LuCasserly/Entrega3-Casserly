@@ -35,8 +35,6 @@ header {
   margin-top: 20px;
 }
 
-@keyframes .miboton
-
 .grid-container-footer {
   display: flex;
   flex-direction: column;
@@ -44,13 +42,16 @@ header {
   border-top: 1px solid black;
   padding-top: 15px;
   margin-top: 15px;
-  @media (min-width: 1024px) {
+}
+@media (min-width: 1024px) {
+  .grid-container-footer {
     display: grid;
     grid-template-areas: "img p a";
     align-items: center;
     justify-items: center;
   }
 }
+
 .p-footer {
   grid-area: p;
 }
@@ -68,6 +69,11 @@ button {
   border-radius: 5px;
   padding: 10px;
   margin: 20px 100px;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.2);
 }
 
 .a-footer {
@@ -243,10 +249,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.enlaces:hover {
-  background-color: gray;
-  opacity: 0.7;
-}
 
 .presentacion {
   display: flex;
@@ -298,6 +300,11 @@ footer {
 .Menu a {
   color: black;
   text-decoration: none;
+  transition: width 0.5s ease, background-color 1s ease;
+}
+.Menu a:hover {
+  text-decoration: solid;
+  color: blue;
 }
 
 .link-arriba {
