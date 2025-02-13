@@ -1,0 +1,56 @@
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin button-style {
+    background-color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 100px;
+}
+
+@keyframes .miboton
+// Estilos
+
+.grid-container-footer {
+    @include flex-column;
+    gap: 5px;
+    border-top: 1px solid black;
+    padding-top: 15px;
+    margin-top: 15px;
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-areas: "img p a";
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+.p-footer {
+    grid-area: p;
+}
+
+.img-footer {
+    grid-area: img;
+    width: 60px;
+    height: 50px;
+    margin: auto;
+}
+
+button {
+    @include button-style;
+}
+
+.a-footer {
+    grid-area: a;
+}

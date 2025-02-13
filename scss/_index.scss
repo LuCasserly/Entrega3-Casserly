@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+// Variables
+$color-base: #5dc584;
+$secondary-color: lightgrey;
+$font-family: "Montserrat", serif;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin button-style {
+    background-color: $color-base;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 100px;
+}
+
+// Para todo el Index
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $secondary-color;
+}
+
+// Títulos
+%title {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 200%;
+}
+
+// Estilos específicos
+
+.enlaces {
+    @include flex-column;
+
+    &:hover {
+        background-color: gray;
+        opacity: 0.7;
+    }
+}
+
+.presentacion {
+    @include flex-center;
+    text-align: center;
+    padding: 20px;
+}
+
+.video-definicion {
+    @include flex-center;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.imagenes {
+    @include flex-column;
+    align-items: center;
+}
+
+.img1, .img2, .img3, .img4 {
+    width: 15em;
+    height: 15em;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.h2-clasificacion, .equivalentes, .h2-sumayresta, .h2-multydiv {
+    @extend %title;
+}
+
+footer {
+    text-align: center;
+}
+
+.Menu {
+    background-color: $color-base;
+    margin: 20px 5px;
+    border-radius: 5rem;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 10px;
+        justify-content: space-evenly;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+
+
+.link-arriba {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+// Media Queries
+@media (min-width: 1024px) {
+    .enlaces { flex-direction: row; }
+    .introduccion { @include flex-column; justify-content: center; }
+    .video-definicion { width: 75%; }
+    .imagenes { flex-direction: row; justify-content: space-evenly; }
+}

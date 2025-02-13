@@ -1,0 +1,95 @@
+// Mixins
+@mixin titulo-seccion {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 200%;
+}
+
+@mixin texto-justificado {
+    text-align: justify;
+    padding: 20px;
+}
+
+@mixin video-responsive {
+    display: flex;
+    width: 70%;
+    height: auto;
+    margin: auto;
+}
+
+
+// Estilos 
+
+.sumayresta {
+    h2 {
+        @include titulo-seccion;
+    }
+
+    p {
+        @include texto-justificado;
+    }
+}
+
+.Suma-resta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    h2 {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .video-igual,
+    .video-diferente {
+        @include video-responsive;
+    }
+}
+
+// Media Queries 
+
+@media (min-width: 1024px) {
+    .sumayresta {
+        p {
+            @include texto-justificado;
+            padding-bottom: 20px;
+        }
+    }
+
+    .Suma-resta {
+        display: grid;
+        grid-template-areas:
+            "h2a h2b"
+            "video1 video2";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+        column-gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+
+        .sumayresta-igual {
+            grid-area: h2a;
+            text-align: center;
+            margin: auto;
+        }
+
+        
+        .video-igual {
+            @include video-responsive;
+            grid-area: video1;
+        }
+
+        .sumayresta-distinto {
+            grid-area: h2b;
+            text-align: center;
+            margin: auto;
+        }
+
+        .video-diferente {
+            @include video-responsive;
+            grid-area: video2;
+        }
+    }
+}

@@ -1,0 +1,117 @@
+// Mixins
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
+@mixin subtitulos {
+    text-align: center;
+    margin: 10px;
+}
+
+@mixin centrado {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+// Extend 
+
+.flex-column-center {
+    @include flex-column-center;
+}
+
+.centrado {
+    @include centrado;
+}
+
+// Estilos 
+
+.equivalentes {
+    @include subtitulos;
+}
+
+.definicion-equivalentes {
+    @extend .flex-column-center;
+
+    h2 {
+        @include subtitulos;
+    }
+}
+
+.metodo-equivalentes {
+    @extend .flex-column-center;
+
+    h2 {
+        @include subtitulos;
+    }
+
+    div {
+        @extend .centrado;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.como-encontrar-equivalentes {
+    @extend .flex-column-center;
+
+    h2 {
+        @include subtitulos;
+    }
+
+    h3 {
+        text-align: left;
+        padding: 15px;
+        font-size: x-large;
+    }
+
+    h4 {
+        @include subtitulos;
+        font-size: x-large;
+        text-decoration: solid;
+        padding: 10px;
+    }
+
+    div {
+        @extend .centrado;
+
+        .amplificando,
+        .simplificando {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+// Media Queries
+
+@media (min-width: 1024px) {
+
+    h2 {
+        font-size: xx-large;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    .ej-equivalente {
+        width: 50% !important; 
+        height: auto;
+    }
+
+    .amplificando,
+    .simplificando {
+        width: 50% !important;
+        height: auto;
+    }
+}

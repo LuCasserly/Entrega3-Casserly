@@ -1,0 +1,55 @@
+// Variables
+$primary-color: #5dc584;
+$secondary-color: lightgrey;
+$font-family: "Montserrat", serif;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Estilos 
+
+.Home {
+    .img-home {
+        width: 35px;
+        height: 35px;
+
+    }
+}
+
+div.titulo {
+    background-color: $primary-color;
+    text-align: center;
+    font-size: large;
+    padding: 5px;
+}
+
+header {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.logo-pagina {
+    @include flex-center;
+
+    img {
+        width: 15rem;
+        height: 15rem;
+        margin: auto;
+    }
+}
+
+.todo-sobre-fracciones {
+    color: black;
+    text-align: center;
+    text-decoration: solid;
+    margin-top: 20px;
+}

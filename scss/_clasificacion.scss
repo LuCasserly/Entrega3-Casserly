@@ -1,0 +1,191 @@
+// Mixins
+
+@mixin img-style {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+}
+
+@mixin p-style {
+    text-align: center;
+    font-size: small;
+}
+
+
+
+// Estilos
+
+.clasificacion {
+    .img-clasificacion {
+        display: flex;
+
+        img {
+            padding-top: 20px;
+            width: 90%;
+            height: auto;
+            justify-items: center;
+            margin: auto;
+        }
+    }
+
+    .definiciones {
+        display: flex;
+        padding: 20px;
+        justify-content: center;
+    }
+}
+
+.grid-container-clasificacion {
+    justify-items: center;
+    row-gap: 10px;
+
+    .img-propia {
+        img {
+            @include img-style;
+        }
+    }
+
+    .p-propia {
+        @include p-style;
+    }
+
+    .img-impropia {
+        img {
+            @include img-style;
+        }
+    }
+
+    .p-impropia {
+        @include p-style;
+
+    }
+
+    .img-aparente {
+        img {
+            @include img-style;
+        }
+    }
+
+    .p-aparente {
+        @include p-style;
+
+    }
+
+    .img-mixta {
+        img {
+            @include img-style;
+        }
+    }
+
+    .p-mixta {
+        @include p-style;
+
+    }
+
+}
+
+//Media queries
+
+@mixin img-grande {
+    width: 85%;
+    height: 300px;
+    margin: auto;
+}
+
+@mixin p-grande {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    align-items: center;
+    font-size: large;
+}
+
+@media (min-width: 1024px) {
+
+    .h2-clasificacion {
+        text-align: center;
+        text-decoration: underline;
+        font-size: 200%;
+    }
+
+    .img-clasificacion {
+        display: flex;
+        margin: auto;
+        width: 50%;
+        margin: auto;
+
+    }
+
+    .definiciones {
+        text-decoration: solid;
+    }
+
+
+    .grid-container-clasificacion {
+        display: grid;
+        grid-template-areas:
+            "img1 p1"
+            "img2 p2"
+            "img3 p3"
+            "img4 p4";
+        justify-items: center;
+        align-items: center;
+        row-gap: 40px;
+
+        .img-propia {
+            grid-area: img1;
+
+            img {
+                @include img-grande;
+            }
+        }
+
+        .p-propia {
+            @include p-grande;
+            grid-area: p1;
+        }
+
+        .img-impropia {
+            grid-area: img2;
+
+            img {
+                @include img-grande;
+            }
+        }
+
+        .p-impropia {
+            @include p-grande;
+            grid-area: p2;
+        }
+
+        .img-aparente {
+            grid-area: img3;
+
+            img {
+                @include img-grande;
+            }
+        }
+
+        .p-aparente {
+            @include p-grande;
+            grid-area: p3;
+            text-align: center;
+        }
+
+        .img-mixta {
+
+            grid-area: img4;
+
+            img {
+                @include img-grande;
+            }
+        }
+
+        .p-mixta {
+            @include p-grande;
+            grid-area: p4;
+        }
+
+    }
+}
