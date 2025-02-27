@@ -1,22 +1,4 @@
-// Mixins
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-@mixin button-style {
-    background-color: $primary-color;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 20px 100px;
-}
 
 
 

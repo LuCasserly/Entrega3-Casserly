@@ -1,34 +1,4 @@
-// Mixins
 
-@mixin flex-column-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 25px;
-    margin-bottom: 10px;
-}
-
-@mixin subtitulos {
-    text-align: center;
-    margin: 10px;
-}
-
-@mixin centrado {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-// Extend 
-
-.flex-column-center {
-    @include flex-column-center;
-}
-
-.centrado {
-    @include centrado;
-}
 
 // Estilos 
 

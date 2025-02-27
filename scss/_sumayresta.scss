@@ -1,21 +1,4 @@
-// Mixins
-@mixin titulo-seccion {
-    text-align: center;
-    text-decoration: underline;
-    font-size: 200%;
-}
 
-@mixin texto-justificado {
-    text-align: justify;
-    padding: 20px;
-}
-
-@mixin video-responsive {
-    display: flex;
-    width: 70%;
-    height: auto;
-    margin: auto;
-}
 
 
 // Estilos 

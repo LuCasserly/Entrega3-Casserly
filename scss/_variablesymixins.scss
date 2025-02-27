@@ -1,0 +1,87 @@
+// Variables
+$primary-color: #5dc584;
+$secondary-color: lightgrey;
+$font-family: "Montserrat", serif;
+
+
+// Mixins
+
+@mixin img-style {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+}
+
+@mixin p-style {
+    text-align: center;
+    font-size: small;
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
+@mixin subtitulos {
+    text-align: center;
+    margin: 10px;
+}
+
+@mixin centrado {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin button-style {
+    background-color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 100px;
+}
+
+@mixin titulo-seccion {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 200%;
+}
+
+@mixin texto-justificado {
+    text-align: justify;
+    padding: 20px;
+}
+
+@mixin video-responsive {
+    display: flex;
+    width: 70%;
+    height: auto;
+    margin: auto;
+}
+
+
+// Extend 
+
+.flex-column-center {
+    @include flex-column-center;
+}
+
+.centrado {
+    @include centrado;
+}

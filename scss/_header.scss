@@ -1,19 +1,4 @@
-// Variables
-$primary-color: #5dc584;
-$secondary-color: lightgrey;
-$font-family: "Montserrat", serif;
 
-// Mixins
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-}
 
 // Estilos 
 
